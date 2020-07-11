@@ -4,7 +4,8 @@ $(document).ready(function () {
   if ($('.header-slider').length) {
     $('.header-slider').slick({
       dots: true,
-      arrows: false
+      arrows: false,
+      autoplay: true,
     })
   }
 

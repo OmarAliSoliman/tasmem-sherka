@@ -49,7 +49,6 @@ img {
 .top-header {
   padding: 10px;
   border-bottom: 1px solid #ddd;
-
   .info {
     span:first-child {
       padding: 10px 0px 10px 10px;
@@ -208,57 +207,53 @@ img {
 
 // start header
 .header {
+  background-image: url('../images/header.png');
+  background-position: center;
+  height: 600px;
+  .header-content {
+    color: #fff;
+    padding-top: 100px;
+
+    h6 {
+      position: relative;
+      display: inline-block;
+      font-size: 16px;
+      padding-bottom: 10px;
+
+      &::after {
+        @extend %line-after;
+        background-color: #fff !important;
+        height: 1px !important;
+        width: 100% !important;
+      }
+    }
+
+    h5 {
+      font-size: 40px;
+    }
+
+    ul {
+      margin-right: 16px;
+      margin-top: 28px;
+
+      li {
+        list-style-type: decimal;
+        font-size: 20px;
+      }
+    }
+  }
   .header-slider {
+    padding-top: 70px;
     .slider-item {
       // background-size:  cover;
       direction: rtl;
-      background-position: center;
-      height: 600px;
-
-      .header-content {
-        color: #fff;
-        padding-top: 100px;
-
-        h6 {
-          position: relative;
-          display: inline-block;
-          font-size: 16px;
-          padding-bottom: 10px;
-
-          &::after {
-            @extend %line-after;
-            background-color: #fff !important;
-            height: 1px !important;
-            width: 100% !important;
-          }
-        }
-
-        h5 {
-          font-size: 40px;
-        }
-
-        ul {
-          margin-right: 16px;
-          margin-top: 28px;
-
-          li {
-            list-style-type: decimal;
-            font-size: 20px;
-          }
-        }
-      }
-
       .header-image {
         padding-top: 70px;
       }
     }
 
     .slick-dots {
-      bottom: 90px !important;
       text-align: center;
-      text-align: right;
-      width: 400px;
-
       li {
         width: 10px !important;
 
@@ -299,7 +294,6 @@ img {
     border: 0;
     background-color: transparent;
     border-radius: 0;
-
     img {
       width: 120px;
       height: 120px;
@@ -547,6 +541,10 @@ img {
     overflow: hidden;
     border-radius: 10px;
     text-align: center;
+    transition: all .5s;
+    &:hover{
+      transform: translateY(-9px);
+    }
 
     &::before {
       content: url('../images/Group66.png');
@@ -761,6 +759,7 @@ img {
 
       img {
         border-radius: 11px;
+        transition: all .5s ease;
       }
 
       .date {
@@ -773,6 +772,7 @@ img {
         color: #fff;
         right: -20px;
         top: -20px;
+        transition: all .5s ease;
 
         span {
           display: inline-block;
@@ -795,12 +795,27 @@ img {
     .card-link {
       color: #FF9408;
     }
+    &:hover{
+      img{
+        border-radius: 0;
+      }
+      .date{
+        right: 0px;
+        top: 0px;
+      }
+      .card-title{
+        color: #853077;
+      }
+      a{
+        color: $mainColor;
+      }
+    }
   }
 }
 
 // start faq
 .faq {
-  margin-top: 90px;
+  padding-top: 90px;
   background-color: #F6F8FA;
   padding-top: 57px;
   padding-bottom: 100px;
@@ -911,13 +926,13 @@ img {
   }
 
   .header {
-    overflow: hidden;
-
+    // overflow: hidden;
+    height: auto;
+    background-size: cover;
     .header-slider {
       .slick-dots {
-        bottom: 186px !important;
+        top: 0 !important;
         text-align: center;
-        width: 100%;
       }
     }
   }

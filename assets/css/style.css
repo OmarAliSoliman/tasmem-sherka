@@ -157,45 +157,48 @@ img {
   right: 0;
 }
 
-.header .header-slider .slider-item {
-  direction: rtl;
+.header {
+  background-image: url("../images/header.png");
   background-position: center;
   height: 600px;
 }
-.header .header-slider .slider-item .header-content {
+.header .header-content {
   color: #fff;
   padding-top: 100px;
 }
-.header .header-slider .slider-item .header-content h6 {
+.header .header-content h6 {
   position: relative;
   display: inline-block;
   font-size: 16px;
   padding-bottom: 10px;
 }
-.header .header-slider .slider-item .header-content h6::after {
+.header .header-content h6::after {
   background-color: #fff !important;
   height: 1px !important;
   width: 100% !important;
 }
-.header .header-slider .slider-item .header-content h5 {
+.header .header-content h5 {
   font-size: 40px;
 }
-.header .header-slider .slider-item .header-content ul {
+.header .header-content ul {
   margin-right: 16px;
   margin-top: 28px;
 }
-.header .header-slider .slider-item .header-content ul li {
+.header .header-content ul li {
   list-style-type: decimal;
   font-size: 20px;
+}
+.header .header-slider {
+  padding-top: 70px;
+}
+.header .header-slider .slider-item {
+  direction: rtl;
 }
 .header .header-slider .slider-item .header-image {
   padding-top: 70px;
 }
 .header .header-slider .slick-dots {
-  bottom: 90px !important;
   text-align: center;
-  text-align: right;
-  width: 400px;
 }
 .header .header-slider .slick-dots li {
   width: 10px !important;
@@ -428,6 +431,10 @@ img {
   overflow: hidden;
   border-radius: 10px;
   text-align: center;
+  transition: all 0.5s;
+}
+.service .card:hover {
+  transform: translateY(-9px);
 }
 .service .card::before {
   content: url("../images/Group66.png");
@@ -606,6 +613,7 @@ img {
 }
 .blogs .card .card-image img {
   border-radius: 11px;
+  transition: all 0.5s ease;
 }
 .blogs .card .card-image .date {
   position: absolute;
@@ -617,6 +625,7 @@ img {
   color: #fff;
   right: -20px;
   top: -20px;
+  transition: all 0.5s ease;
 }
 .blogs .card .card-image .date span {
   display: inline-block;
@@ -634,9 +643,22 @@ img {
 .blogs .card .card-link {
   color: #FF9408;
 }
+.blogs .card:hover img {
+  border-radius: 0;
+}
+.blogs .card:hover .date {
+  right: 0px;
+  top: 0px;
+}
+.blogs .card:hover .card-title {
+  color: #853077;
+}
+.blogs .card:hover a {
+  color: #6A943E;
+}
 
 .faq {
-  margin-top: 90px;
+  padding-top: 90px;
   background-color: #F6F8FA;
   padding-top: 57px;
   padding-bottom: 100px;
@@ -728,12 +750,12 @@ img {
   }
 
   .header {
-    overflow: hidden;
+    height: auto;
+    background-size: cover;
   }
   .header .header-slider .slick-dots {
-    bottom: 186px !important;
+    top: 0 !important;
     text-align: center;
-    width: 100%;
   }
 
   .about-company .prev .about-content {
@@ -810,7 +832,7 @@ img {
     transform: translateY(0px);
   }
 }
-.header .header-slider .slider-item .header-content h6::after, .working .section-header p::after, .service .section-header p::after {
+.header .header-content h6::after, .working .section-header p::after, .service .section-header p::after {
   content: "";
   position: absolute;
   width: 25px;
